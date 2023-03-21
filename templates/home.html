@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Your Story {% endblock %}
+
+{% block content %}
+    <h1>Madlibs</h1>
+    <form action="/story">
+    <ul>
+        {% for word in words%}
+            <li>
+                <label for="{{word}}">{{word}}: </label>
+                <input type="text" name="{{word}}">
+            </li>
+        {% endfor %}    
+    </ul>
+        <button>Submit</button>
+    </form>
+{% endblock %}
